@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>trovaMaggiore</title>
+</head>
+<body>
+    <h2>Numero più grande</h2>
+
+<p id="risultato"> </p>
+
+<script>
+maggiore(64,102,5);
+
+do{
+    let n = parseInt(prompt("Inserisci un numero minore di 27: "));
+}
+while (n>27 && n<1);
+
+document.getelementbyId("scelto").innerHTML += n;
+
+maggiore(n);
+
+function maggiore(n1,n2,n3) {
+  
+    if (n1 > n2)
+        if (n1>n3)
+    	    document.getElementById("risultato").innerHTML = n1;
+	    else
+    	    document.getElementById("risultato").innerHTML = n3;
+
+    else
+        if (n2>n3)
+            document.getElementById("risultato").innerHTML = n2;
+        else
+            document.getElementById("risultato").innerHTML = n3;
+
+  
+}
+
+function sommaNumeriPrecedenti(n){
+
+    let somma = 0;
+
+    for (let i = 0; i < n; i++) {
+        
+        somma +=i;
+    }
+
+    }
+
+</script>
+</body>
+</html>
