@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <p id="ris">risultato: </p>
+
+    <button onclick=dado.lancia()>Lancia</button>
+
+    <br>
+    <br>
+    <button onclick=dado.lancia20Volte()>Lancia 20 Volte</button>
+    <br>
+    <p id="1"></p>
+    <p id="2"></p>
+    <p id="3"></p>
+    <p id="4"></p>
+    <p id="5"></p>
+    <p id="6"></p>
+
+
+    <script>
+
+        const dado = {
+            
+            f1: 0, //frequenza prima faccia
+            f2: 0,
+            f3: 0,
+            f4: 0,
+            f5: 0,
+            f6: 0,
+
+            lancia : function () {
+                
+                n = Math.floor(Math.random() * 6) + 1; //Da 1 a 6
+
+                switch(n) {
+                    case 1:
+                        this.f1++;
+                        break;
+                    case 2:
+                        this.f2++;
+                        break;
+                    case 3:
+                        this.f3++;
+                        break;
+                    case 4:
+                        this.f4++;
+                        break;
+                    case 5:
+                        this.f5++;
+                        break;   
+                    case 6:
+                        this.f6++;
+                        break;  
+                }
+                document.getElementById("ris").innerHTML="risultato: " + n;
+            },
+
+            lancia20Volte : function () {
+
+                this.f1 = 0;
+                this.f2 = 0;
+                this.f3 = 0;
+                this.f4 = 0;
+                this.f5 = 0;
+                this.f6 = 0;
+
+                for (let index = 0; index < 20; index++) {
+                    dado.lancia();
+                }
+
+                document.getElementById("1").innerHTML="Frequenza 1 = " + this.f1;
+                document.getElementById("2").innerHTML="Frequenza 2 = " + this.f2;
+                document.getElementById("3").innerHTML="Frequenza 3 = " + this.f3;
+                document.getElementById("4").innerHTML="Frequenza 4 = " + this.f4;
+                document.getElementById("5").innerHTML="Frequenza 5 = " + this.f5;
+                document.getElementById("6").innerHTML="Frequenza 6 = " + this.f6;
+            }
+        }
+
+    </script>
+    
+</body>
+</html>
