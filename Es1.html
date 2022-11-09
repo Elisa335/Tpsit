@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<button onclick="car.modelloColore()">modelloColore</button>
+<button onclick="moneta.lancia(), moneta.stampa()">Lancia Moneta</button>
+<p id="p"></p>
+<p id="lancio"></p>
+<p id="nlanci"></p>
+
+    <script>
+
+        const car = {
+
+            modello : "Ferrari",
+            colore: "nero",
+            anno: 2019,
+
+            modelloColore : function() {
+                document.getElementById("p").innerHTML = this.modello + " " + this.colore;
+
+            }
+        }
+
+        const moneta = {
+            lancio : "",
+            nlanci : 0,
+
+            lancia : function(){
+                let n = Math.floor(Math.random()*2);
+
+                //Da 1 a 10
+                //Math.floor(Math.random()*10)+1;
+
+                if (n==0){
+                    this.lancio = "croce";
+                }
+                else{
+                    this.lancio = "testa";
+                }
+                this.nlanci++;
+
+            },
+
+            stampa : function(){
+                document.getElementById("lancio").innerHTML = "Risultato = " + this.lancio;
+                document.getElementById("nlanci").innerHTML = "Numero Lanci: " + this.nlanci;
+            }
+        }
+    </script>
+
+</body>
+</html>
