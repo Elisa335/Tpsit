@@ -10,9 +10,18 @@
     
 <button onclick="car.modelloColore()">modelloColore</button>
 <button onclick="moneta.lancia(), moneta.stampa()">Lancia Moneta</button>
+<button onclick="dado.lancia()">Lancia Dado</button>
+
 <p id="p"></p>
 <p id="lancio"></p>
 <p id="nlanci"></p>
+
+<p id="1">1</p>
+<p id="2"></p>
+<p id="2"></p>
+<p id="4"></p>
+<p id="5"></p>
+<p id="6"></p>
 
     <script>
 
@@ -53,6 +62,19 @@
                 document.getElementById("nlanci").innerHTML = "Numero Lanci: " + this.nlanci;
             }
         }
+
+        const dado = {
+
+            frequenze : [0,0,0,0,0,0],
+
+            lancia : function() {
+                
+                let n = Math.floor(Math.random()*6)+1;
+                this.frequenze[n-1] +=1;
+
+                document.getElementById("1").innerHTML = this.frequenze[n-1];
+        }
+    }
     </script>
 
 </body>

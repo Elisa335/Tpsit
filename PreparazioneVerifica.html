@@ -8,8 +8,7 @@
 </head>
 <body>
 
-    <button onclick="Dado.lancia()">Lancia</button>
-    <button onclick="Dado.visualizza()">Visualizza Frequenze</button>
+    <button onclick="Dado.lancia(), lancia.visualizza()">Lancia</button>
 
     <p id="1"></p>
     <p id="2"></p>
@@ -32,19 +31,15 @@
                 
                 for (let i = 0; i < this.frequenze.length; i++) {
                     
-                    document.getElementById(i+1+"").innerHTML = "Frequenza " + i + " : " + this.dado.frequenze.indexOf(i);
-                    document.getElementById("1").innerHTML = "ciao";
+                    document.getElementById(i.toString).innerHTML = "Frequenza " + i + " : " + this.frequenze.indexOf(i);
                 }
+
+                p = 3;
+
+                document.getElementById("1").innerHTML = p.toString();
             }
         }
-
-        function visualizzaDado() {
-            
-            
-        }
         
-
-
     </script>
 </body>
 </html>
